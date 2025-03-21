@@ -1,0 +1,242 @@
+body{
+    background-color: hsl(13, 31%, 94%);
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.productCard > .top{
+    position: relative;
+}
+
+.top > img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cardBody{
+    margin-top: 10px;
+}
+
+.cardBody *{
+    margin: 0;
+    padding: 0;
+}
+
+.cardBody .category{
+    color: hsl(12, 20%, 44%);
+    font-size: 0.8rem;
+}
+
+.cardBody .productName{
+    color: hsl(14, 65%, 9%);
+}
+
+.cardBody .price{
+    color: hsl(14, 86%, 42%);
+}
+
+.cartButton{
+    border: solid 1px hsl(14, 65%, 9%);
+    background-color: white;
+    color: hsl(14, 65%, 9%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 500px;
+    padding: 5px 20px;
+    width: max-content;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.cartButton:hover{
+    color: hsl(14, 86%, 42%);
+    border: solid 1px hsl(14, 86%, 42%);
+}
+
+.cartButton.selected{
+    background-color: hsl(14, 86%, 42%);
+    border: solid 1px hsl(14, 86%, 42%);
+    cursor: default;
+    color: white;
+    min-width: 120px;
+    justify-content: space-between;
+    padding-inline: 9px;
+}
+
+.cartButton.selected:hover{
+    color: white;
+}
+
+.cartButton.selected button{
+    border: solid white 1px;
+    border-radius: 100px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cartButton.selected button img{
+    aspect-ratio: 1/1;
+    width: 10px;
+    width: auto;
+}
+
+.cartButton.selected button:hover{
+    background-color: white;
+}
+
+.cartButton.selected button:hover img{
+    filter: invert(27%) sepia(100%) saturate(7471%) hue-rotate(357deg) brightness(101%) contrast(107%);
+}
+
+
+
+
+
+
+
+
+
+
+
+#cartItems{
+    background-color: hsl(20, 50%, 98%);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#cartItems > p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#itemCart{
+    margin: 20px 0;
+}
+
+.emptyCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: hsl(12, 20%, 44%);
+    padding: 40px 0;
+}
+
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid hsl(13, 31%, 94%);
+    padding: 10px 0 10px 0;
+}
+
+.item:first-child{
+    padding: 0 0 10px 0;
+}
+
+.item:last-child{
+    padding: 10px 0 0 0;
+}
+
+.item > div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.item > div *{
+    margin: 0;
+}
+
+.item > div > div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item > div > div *{
+    font-size: 0.9rem;
+}
+
+.name{
+    color: hsl(14, 65%, 9%);
+    font-weight: 600;
+    margin: 0;
+}
+
+.quantity{
+    color: hsl(14, 86%, 42%);
+}
+
+.unit{
+    color:hsl(7, 20%, 60%);
+}
+
+.price{
+    color: hsl(12, 20%, 44%);
+}
+
+.removeButton{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid hsl(14, 25%, 72%);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.removeButton:hover{
+    filter: invert(72%) sepia(7%) saturate(20%) hue-rotate(14deg) brightness(100%) contrast(72%);
+}
+
+.carbonNeutral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 200px;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: hsl(13, 31%, 94%);;
+}
+
+.total{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.carbonNeutral span{
+    font-weight: 600;
+}
+
+.confirm-button{
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.confirm-button:hover{
+    background-color: hsl(14, 85%, 35%);
+    color: white;
+}
