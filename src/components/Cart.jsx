@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeProduct } from '../slices/cartSlice';
-import removeIcon from '../assets/images/icon-remove-item.svg';
-import carbonNeutralIcon from '../assets/images/icon-carbon-neutral.svg';
-import emptyCartImage from '../assets/images/illustration-empty-cart.svg';
 
 export default function Cart() {
     const cart = useSelector(state => state.cart.products);
     const dispatch = useDispatch();
     const [total, setTotal] = useState(0);
+    const removeIcon = '/assets/images/icon-remove-item.svg';
+    const carbonNeutralIcon = '/assets/images/icon-carbon-neutral.svg';
+    const emptyCartImage = '/assets/images/illustration-empty-cart.svg';
 
     useEffect(() => {
         let total = 0;

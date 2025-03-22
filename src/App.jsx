@@ -11,7 +11,7 @@ function App() {
               <div className="row">
                   <div className="col-md-8">
                       <div className="row row-gap-4">
-                          <h1>Desserts</h1>
+                          <h1 className='heading'>Desserts</h1>
                           <ProductList />
                       </div>
                   </div>

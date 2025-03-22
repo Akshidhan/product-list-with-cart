@@ -6,9 +6,12 @@ export default function Products() {
     const [products, setProducts] = useState([]);
     const cart = useSelector(state => state.cart.products);
     const dispatch = useDispatch();
+    const addToCartIcon = '/assets/images/icon-add-to-cart.svg';
+    const decreamentButton = '/assets/images/icon-decrement-quantity.svg';
+    const increamentButton = '/assets/images/icon-increment-quantity.svg';
 
     useEffect(() => {
-        fetch('./data.json')
+        fetch('/data.json')
             .then(response => response.json())
             .then(data => {
                 setProducts(data);
@@ -24,13 +27,13 @@ export default function Products() {
                             <img src={product.image.desktop} alt={product.name} />
                             {cart.find(item => item.id === product.id) ? (
                                 <div className="cartButton selected">
-                                    <button onClick={() => dispatch(decreaseQuantity(product))}><img src="icon-decrement-quantity.svg" alt="" /></button>
+                                    <button onClick={() => dispatch(decreaseQuantity(product))}><img src={decreamentButton} alt="" /></button>
                                     {cart.find(item => item.id === product.id).quantity}
-                                    <button onClick={() => dispatch(increaseQuantity(product))}><img src="icon-increment-quantity.svg" alt="" /></button>
+                                    <button onClick={() => dispatch(increaseQuantity(product))}><img src={increamentButton} alt="" /></button>
                                 </div>
                             ) : (
                                 <div className="cartButton" onClick={() => dispatch(addProduct(product))}>
-                                    <img src="icon-add-to-cart.svg" alt="Add to cart" />
+                                    <img src={addToCartIcon} alt="Add to cart" />
                                     Add to cart
                                 </div>
                             )}

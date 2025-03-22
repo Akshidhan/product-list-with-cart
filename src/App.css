@@ -7,6 +7,10 @@ p{
     padding: 0;
 }
 
+.heading{
+    font-weight: 700;
+}
+
 .productCard > .top{
     position: relative;
 }
