@@ -9,8 +9,10 @@ export default function Cart() {
     const removeIcon = '/assets/images/icon-remove-item.svg';
     const carbonNeutralIcon = '/assets/images/icon-carbon-neutral.svg';
     const emptyCartImage = '/assets/images/illustration-empty-cart.svg';
+    const confirmedIcon = '/assets/images/icon-order-confirmed.svg';
 
     useEffect(() => {
+        console.log('Calculating total...');
         let total = 0;
         cart.forEach(product => {
             total += product.price * product.quantity;
@@ -24,42 +26,42 @@ export default function Cart() {
 
     return (
         <>
-            <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content border-0">
-                        <div class="modal-body p-4 rounded-5">
-                            <img src="icon-order-confirmed.svg" alt="Order confirmed" class="py-2" />
+            <div className="modal fade" id="checkoutModal" tabIndex="-1" aria-labelledby="checkoutModal" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content border-0">
+                        <div className="modal-body p-4 rounded-5">
+                            <img src={confirmedIcon} alt="Order confirmed" className="py-2" />
                             <p id="orderHeading">Order Confirmed</p>
-                            <p id="orderSub" class="pb-4">We hope you enjoy your food</p>
+                            <p id="orderSub" className="pb-4">We hope you enjoy your food</p>
                             <div>
                                 <div id="mainComponent">
                                     <div id="selectedItems">
                                         {cart.map(product => (
-                                        <div class="selectedItem p-3 d-flex justify-content-between flex-row align-items-center">
-                                            <div class="d-flex gap-4 align-items-center">
-                                                <img src="image-tiramisu-thumbnail.jpg" alt="thumbnail" class="rounded-2 thumbnail" />
-                                                <div class="d-flex flex-column align-items-start">
-                                                    <p class="name">{product.name}</p>
-                                                    <div class="d-flex gap-4">
-                                                        <p class="quantity">{product.quantity}x</p>
-                                                        <p class="unit">@${product.price}</p>
+                                        <div className="selectedItem p-3 d-flex justify-content-between flex-row align-items-center" key={product.id}>
+                                            <div className="d-flex gap-4 align-items-center">
+                                                <img src={product.image.thumbnail} alt="thumbnail" className="rounded-2 thumbnail" />
+                                                <div className="d-flex flex-column align-items-start">
+                                                    <p className="name">{product.name}</p>
+                                                    <div className="d-flex gap-4">
+                                                        <p className="quantity">{product.quantity}x</p>
+                                                        <p className="unit">@${product.price}</p>
                                                     </div> 
                                                 </div>
                                             </div>
                                             <div>
-                                                <p class="price">${product.price * product.quantity}</p>
+                                                <p className="price">${product.price * product.quantity}</p>
                                             </div>
                                         </div>
                                         ))}
                                     </div>
         
-                                    <div class="d-flex justify-content-between my-4 align-items-center">
+                                    <div className="d-flex justify-content-between my-4 align-items-center">
                                         <p>Order Total</p>
-                                        <p class="total">${total}</p>
+                                        <p className="total">${total}</p>
                                     </div>
                                 </div>
 
-                                <button class="btn confirm-button" onClick={checkoutPanel()} data-bs-dismiss="modal">Start New Order</button>
+                                <button className="btn confirm-button" onClick={checkoutPanel} data-bs-dismiss="modal">Start New Order</button>
                             </div>
                             
                         </div>
@@ -90,7 +92,7 @@ export default function Cart() {
                         <div className="carbonNeutral">
                             <img src={carbonNeutralIcon} alt="Carbon neutral icon" /><p>This is a <span>carbon-neutral</span> delivery</p>
                         </div>
-                        <button className="btn confirm-button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">Confirm Order</button>
+                        <button className="btn confirm-button" type="button" data-bs-toggle="modal" data-bs-target="#checkoutModal">Confirm Order</button>
                     </div>
                 </div>
             ) : (

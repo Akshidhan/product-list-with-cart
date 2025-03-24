@@ -3,7 +3,6 @@ import Cart from './components/Cart.jsx'
 import ProductList from './components/Products.jsx'
 
 function App() {
-
   return (
     <>
       <div className="container my-5">

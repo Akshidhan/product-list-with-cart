@@ -244,3 +244,29 @@ p{
     background-color: hsl(14, 85%, 35%);
     color: white;
 }
+
+
+
+
+.selectedItem{
+    height: fit-content;
+    border-bottom: 1px solid hsl(13, 31%, 94%);
+}
+
+.thumbnail{
+    width: 60px;
+    aspect-ratio: 1/1;
+}
+
+#orderHeading{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+#orderSub{
+    color: hsl(12, 20%, 44%);
+}
+
+#mainComponent{
+    background-color: hsl(20, 50%, 98%);
+}
