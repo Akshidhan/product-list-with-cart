@@ -4,8 +4,6 @@ import { addProduct, increaseQuantity, decreaseQuantity } from '../slices/cartSl
 
 export default function Products() {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
     const cart = useSelector(state => state.cart.products);
     const dispatch = useDispatch();
     const addToCartIcon = '/assets/images/icon-add-to-cart.svg';
@@ -13,30 +11,12 @@ export default function Products() {
     const increamentButton = '/assets/images/icon-increment-quantity.svg';
 
     useEffect(() => {
-        console.log('Fetching data...');
         fetch('/data.json')
-            .then(response => {
-                console.log('Response:', response);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('Data:', data);
                 setProducts(data);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                setError(error);
-                setLoading(false);
             });
     }, []);
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
 
     return (
         <>
